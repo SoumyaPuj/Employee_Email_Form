@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+{% load static %}
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Required Database</title>
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Mr+Dafoe" rel="stylesheet">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        </head>
+        <body>
+        <div class="col-lg-12">
+                    <div class="header">
+                      <a href="#default" class="logo">*HUMAN RESOURCE*</a>
+                      <div class="header-right">
+                        <a class="active" href="/"><strong>Home</strong></a>
+                        <a href="/about/"><strong>About</strong></a>
+                        <a href="/register/"><strong>Register</strong></a>
+                        <a href="/show/"><strong>Show</strong></a>
+                      </div>
+                    </div>
+        </div>
+        <center>
+        <div class="col-lg-12">
+            <h1><b>Personal Information</b></h1>
+
+        <form action="." method="post">
+
+            <table width="100%">
+                {%csrf_token%}
+                <tr>
+                    <th>
+                        <h2>Field Name</h2>
+                    </th>
+                    <th>
+                        <h2>Detail Information</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Full Name :</b>
+                    </td>
+                    <td>
+                        <input type="text" name="name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Technology :</b>
+                    </td>
+                    <td>
+                        <input type="text" name="technology" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Passport Details :</b>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <th>Passport Number</th>
+                                <th>Issued Date</th>
+                                <th>Expiry Date</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="passport_no"></td>
+                                <td><input type="date" name="issue_dt"></td>
+                                <td><input type="date" name="expiry_dt"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Salary Account Details</b>
+                    </td>
+                    <td>
+                        <input type="text" name="account_dtl">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Previous Organization Name</b>
+                    </td>
+                    <td>
+                        <input type="text" name="pre_org_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Total Experience</b>
+                    </td>
+                    <td>
+                        <b>Experience In Years :</b>
+                        <select name="tot_exp_years">
+                        <script language="javascript" type="text/javascript">
+
+                        for(var d=0;d<=11;d++)
+                        {
+                            document.write("<option>"+d+"</option>");
+                        }
+                        </script>
+                        </select>
+                    &nbsp;&nbsp;&nbsp;
+                        <b>Experience In Months :</b>
+                        <select name="tot_exp_months">
+                        <script language="javascript" type="text/javascript">
+
+                        for(var d=0;d<=11;d++)
+                        {
+                            document.write("<option>"+d+"</option>");
+                        }
+                        </script>
+                        </select>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                        <b>Relevant Experience</b>
+                    </td>
+                    <td>
+                        <b>Experience In Years :</b>
+                        <select name="rel_exp_years">
+                        <script language="javascript" type="text/javascript">
+
+                        for(var d=0;d<=50;d++)
+                        {
+                            document.write("<option>"+d+"</option>");
+                        }
+                        </script>
+                        </select>
+                    &nbsp;&nbsp;&nbsp;
+                        <b>Experience In Months :</b>
+                        <select name="rel_exp_months">
+                        <script language="javascript" type="text/javascript">
+
+                        for(var d=0;d<=11;d++)
+                        {
+                            document.write("<option>"+d+"</option>");
+                        }
+                        </script>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Personal Email Address</b>
+                    </td>
+                    <td>
+                        <input type="email" name="email_address">
+                    </td>
+                </tr>
+               <tr>
+                    <td>
+                        <b>Blood Group</b>
+                    </td>
+                    <td>
+                        <select name="blood_group">
+                            <option value="A+">A+</option>
+                            <option value="O+">O+</option>
+                            <option value="B+">B+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="A-">A-</option>
+                            <option value="O-">O-</option>
+                            <option value="B-">B-</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Immediate Contact Person(Family Member)</b>
+                    </td>
+                    <td>
+                        <select name="family_member">
+                            <option value="Parents">Parents</option>
+                            <option value="Spouse">Spouse</option>
+                            <option value="Guardian">Guardian</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>Member Name </b>
+                    </td>
+                    <td>
+                        <input type="text" name="member_name">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>Member Contact Number </b>
+                    </td>
+                    <td>
+                        <input type="number" name="member_no">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>Current Address </b>
+                    </td>
+                    <td>
+                        <textarea name="current_address"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Permanent Address </b>
+                    </td>
+                    <td>
+                        <textarea name="permanent_address"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Marital Status</b>
+                    </td>
+                    <td>
+                        <select name="status">
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" name="submit" value="SEND DATA">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        </center>
+        </body>
+        </html>
+

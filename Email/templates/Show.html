@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Details Information</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<table border="1" width="100%" height="100%">
+    {%csrf_token%}
+    <tr>
+
+            <h2>Detail Information</h2>
+
+    </tr>
+    <tr>
+
+        <td>
+            <b>Full Name </b>
+        </td>
+
+        <td>
+            <b>Technology </b>
+        </td>
+
+        <td>
+            <b>Passport Number</b>
+        </td>
+        <td>
+            <b>Issued Date</b>
+        </td>
+        <td>
+            <b>Expiry Date</b>
+        </td>
+
+        <td>
+            <b>Salary Account Details</b>
+        </td>
+        <td>
+            <b>Previous Organization Name</b>
+        </td>
+
+        <td>
+            <b>Total Experience</b>
+        </td>
+
+        <td>
+            <b>Relevant Experience</b>
+        </td>
+
+        <td>
+            <b>Personal Email Address</b>
+        </td>
+
+        <td>
+            <b>Blood Group</b>
+        </td>
+
+        <td>
+            <b>Family Member</b>
+        </td>
+
+
+        <td>
+            <b>Member Name </b>
+        </td>
+
+
+        <td>
+            <b>Member Contact Number </b>
+        </td>
+
+
+        <td>
+            <b>Current Address </b>
+        </td>
+
+
+        <td>
+            <b>Permanent Address </b>
+        </td>
+
+        <td>
+            <b>Marital Status</b>
+        </td>
+
+    </tr>
+
+    <tr>
+{% for post in Email_Information %}
+        <td>
+            <label>{{post.NAME}}</label>
+        </td>
+        <td>
+            <label>{{post.TECHNOLOGY}}</label>
+        </td>
+
+            <td><label>{{post.PASSPORT_NUMBER}}</label></td>
+            <td><label>{{post.ISSUED_DATE}}</label></td>
+            <td><label>{{post.EXPIRY_DATE}}</label></td>
+
+    <td>
+        <label>{{post.SALARY_ACCOUNT}}</label>
+    </td>
+    <td>
+        <label>{{post.PRE_ORG_NAME}}</label>
+    </td>
+    <td>
+        <label>{{post.TOT_EXP_YEARS}}.{{post.TOT_EXP_MONTHS}}</label>
+    </td>
+    <td>
+        <label>{{post.REL_EXP_YEARS}}.{{post.REL_EXP_MONTHS}}</label>
+    </td>
+    <td>
+        <label>{{post.PERSONAL_EMAIL}}</label>
+    </td>
+    <td>
+        <label>{{post.BLOOD_GRP}}</label>
+    </td>
+    <td>
+        <label>{{post.FAMILY_MEM}}</label>
+    </td>
+    <td>
+        <label>{{post.MEM_NAME}}</label>
+    </td>
+    <td>
+        <label>{{post.MEM_CON_NO}}</label>
+    </td>
+    <td>
+        <label>{{post.CURR_ADDRESS}}</label>
+    </td>
+    <td>
+        <label>{{post.PER_ADDRESS}}</label>
+    </td>
+    <td>
+        <label>{{post.MARITAL_STS}}</label>
+    </td>
+
+    </tr>
+{% endfor %}
+
+</table>
+</body>
+</html>
